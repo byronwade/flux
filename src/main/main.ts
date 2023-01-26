@@ -8,16 +8,12 @@
  * When running `npm run build` or `npm run build:main`, this file is compiled to
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
-import path from 'path';
-import { app, BrowserWindow, shell, ipcMain } from 'electron';
-import { autoUpdater } from 'electron-updater';
+import { app, BrowserWindow, ipcMain, shell } from 'electron';
 import log from 'electron-log';
+import { autoUpdater } from 'electron-updater';
+import path from 'path';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
-
-ipcMain.handle('quit-app', () => {
-  app.quit();
-});
 
 class AppUpdater {
   constructor() {
@@ -112,6 +108,20 @@ const createWindow = async () => {
   mainWindow.webContents.setWindowOpenHandler((edata) => {
     shell.openExternal(edata.url);
     return { action: 'deny' };
+  });
+
+  ipcMain.on('max', () => {
+    if (mainWindow.isMaximized()) {
+      mainWindow.restore();
+    } else {
+      mainWindow.maximize();
+    }
+  });
+  ipcMain.on("min", () => {
+    mainWindow.minimize();
+  });
+  ipcMain.on("close", () => {
+    mainWindow.close();
   });
 
   // Remove this if your app does not use auto updates
