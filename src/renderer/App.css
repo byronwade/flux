@@ -7,11 +7,52 @@
   overflow-y: hidden;
   padding:0;
   margin:0;
+  background: #202221;
+  color: #f8f9fa;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
+
+
+:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+button {
+  cursor: pointer !important;
+}
+
+button.white-active {
+  color: #fff !important;
+}
+
+.card-link:hover {
+  background: #35393c;
+  border: 3px solid #9c9c9c;
+  margin: -3px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+
+
+
+
 
 .window-controls {
   margin: auto;
-  background-color: white;
   width: 100%;
   height: 35px;
   display: flex;
@@ -25,7 +66,7 @@
   -webkit-app-region: no-drag;
 }
 .window-controls .minimize:hover {
-  background-color: #DFDFDF;
+  background: #333;
   color: #FFFFFF;
 }
 .window-controls .minimize:after {
@@ -36,7 +77,7 @@
   height: 10px;
 }
 .window-controls .minimize:hover:after {
-  border-color: #000000;
+  border-color: #FFFFFF;
 }
 .window-controls .maximize {
   display: flex;
@@ -46,7 +87,7 @@
   -webkit-app-region: no-drag;
 }
 .window-controls .maximize:hover {
-  background-color: #DFDFDF;
+  background: #333;
   color: #FFFFFF;
 }
 .window-controls .maximize:after {
@@ -58,7 +99,7 @@
   width: 7.5px;
 }
 .window-controls .maximize:hover:after {
-  border-color: #000000;
+  border-color: #FFFFFF;
 }
 .window-controls .close {
   display: flex;
@@ -89,4 +130,95 @@
 }
 .window-controls .close:hover:after {
   border-color: #FFFFFF;
+}
+
+
+
+
+.header {
+  height: 60px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+
+
+
+
+/* loading */
+.isLoding {
+  height: 47em;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+.smart-glass {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 288px;
+  height: 388px;
+}
+
+.smart-glass h1 {
+  font-size: 2rem;
+  color: #FFF;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.smart-glass .logo {
+  width: 288px;
+  height: 288px;
+  position: relative;
+}
+
+.smart-glass .circle {
+  padding: 20px;
+  border: 6px solid transparent;
+  border-top-color: #199DDB;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation: connect 2.5s linear infinite;
+}
+
+.smart-glass .thorbis {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  color: #199DDB;
+  line-height: 80px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.smart-glass .loading-text {
+  text-transform: uppercase;
+  color: #FFF;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
+
+@keyframes connect {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(-360deg);
+  }
 }
