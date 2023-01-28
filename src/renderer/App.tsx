@@ -1,19 +1,19 @@
 import { MemoryRouter as Router, Route, Routes } from 'react-router-dom';
 // import Loading from "./components/loading";
-import WindowControls from "./components/windowControls";
+import Navbar from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 const Hello = () => {
   return (
-    <div>
-      <WindowControls />
+    <div style={{paddingTop: 32}}>
+      <Navbar />
       <div className="container-fluid">
         <div className="row">
           <div className="col-lg-12">
-            <div className="header">
+            <<div className="header">
               login, logo, main navigation (Games, Shop, Mobile Apps)
-            </div>
+            </div>>
           </div>
         </div>
         {/* <Loading /> */}

@@ -74,7 +74,12 @@ const createWindow = async () => {
     width: 1600,
     height: 950,
     autoHideMenuBar: true,
-    frame: false,
+    titleBarStyle: 'hidden',
+    titleBarOverlay: {
+      color: '#2f3241',
+      symbolColor: '#74b1be',
+      height: 32
+    },
     icon: getAssetPath('icon.png'),
     webPreferences: {
       // devTools: false,
